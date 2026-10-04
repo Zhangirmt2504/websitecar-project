@@ -1,37 +1,66 @@
-@media (max-width: 700px) {
-    .car-list,
-    .simple-list { 
-        flex-direction: column;
+@media (min-width: 48rem) {
+    section {
+        padding-block: 3rem;
     }
 
-    .hero {
-        padding: 35px 15px;
+    .header-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    .hero h2 {
-        font-size: 27px;
+    .hero-layout {
+        flex-direction: row;
+        align-items: center;
     }
 
-    nav a {
-        margin: 3px;
-        padding: 7px;
+    .hero-layout > * {
+        flex: 1;
     }
 
-    main {
-        width: 94%;
+    .features,
+    .cards,
+    .service-list,
+    .values,
+    .steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .stats {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
-@media (max-width: 400px) {
-    header h1 {
-        font-size: 25px;
+@media (min-width: 64rem) {
+    .features,
+    .cards,
+    .service-list,
+    .values {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    nav a {
-        display: block;
+    .steps {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
-    .car-card img {
-        height: 160px;
+    .contact-layout {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .contact-layout > .contact-form {
+        flex: 3;
+    }
+
+    .contact-layout > .contact-details {
+        flex: 2;
+    }
+
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr;
     }
 }
