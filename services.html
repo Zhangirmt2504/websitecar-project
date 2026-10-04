@@ -1,53 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aurelius Cars | Cars</title>
+    <meta name="description" content="Catalogue of six Aurelius car models with specifications, price comparison and after-sale services.">
+    <title>Cars &amp; Services | Aurelius Cars</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-    <header>
-        <h1>Our Cars</h1>
-        <p>Choose a car you like.</p>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="services.html">Cars</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="index.html">Aurelius <span>Cars</span></a>
+            <nav aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="services.html" aria-current="page">Cars &amp; Services</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section>
-            <h2>Cars for You</h2>
-            <div class="car-list">
-                <article class="car-card">
-                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80" alt="Sports car">
-                    <h3>Sports Car</h3>
-                    <p>This car is fast.</p>
-                    <p class="price">From $50,000</p>
-                </article>
-                <article class="car-card">
-                    <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=900&q=80" alt="SUV car">
-                    <h3>Luxury SUV</h3>
-                    <p>This car is big and safe.</p>
-                    <p class="price">From $45,000</p>
-                </article>
-                <article class="car-card">
-                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=900&q=80" alt="City car">
-                    <h3>City Car</h3>
-                    <p>This car is good for the city.</p>
-                    <p class="price">From $30,000</p>
-                </article>
+    <main id="main-content">
+        <section class="page-hero" aria-labelledby="page-title">
+            <div class="container hero-layout">
+                <div>
+                    <p class="eyebrow">Catalogue and services</p>
+                    <h1 id="page-title">Our cars and services</h1>
+                    <p>Six cars from Porsche, Mercedes-Benz and Audi: sports cars, the G-Class SUV, a business sedan and an electric Porsche. Under the catalogue you can compare all prices in one table and read about our after-sale services.</p>
+                    <div class="button-row">
+                        <a class="button" href="#catalogue">Open the catalogue</a>
+                        <a class="button button-outline" href="#compare">Compare prices</a>
+                    </div>
+                </div>
+                <img class="hero-image" src="images/porsche-taycan.jpg" alt="Silver Porsche Taycan on a city street" width="1200" height="900">
             </div>
         </section>
-        <section class="note">
-            <h2>Our Service</h2>
-            <p>We help you choose a car. Please contact us for more information.</p>
+
+        <section id="catalogue" aria-labelledby="catalogue-title">
+            <div class="container">
+                <h2 id="catalogue-title">Car catalogue</h2>
+                <p class="section-intro">All cars are available for a test drive. Prices are starting prices for the basic version.</p>
+                <div class="cards">
+                    <article class="card car-card" id="porsche-911">
+                        <img class="card-image" src="images/porsche-911.jpg" alt="Grey Porsche 911 parked by a green hedge" width="1200" height="900">
+                        <div class="card-body">
+                            <h3>Porsche 911 Carrera S</h3>
+                            <p>The classic rear-engine sports car. Very fast but still fine for everyday driving.</p>
+                            <dl class="specs">
+                                <dt>Type</dt><dd>Sports car</dd>
+                                <dt>Engine</dt><dd>Petrol, 450 hp</dd>
+                                <dt>Seats</dt><dd>4</dd>
+                            </dl>
+                            <p class="price">From $130,000</p>
+                            <a class="button button-outline" href="contact.html#test-drive">Plan a test drive</a>
+                        </div>
+                    </article>
+                    <article class="card car-card" id="mercedes-g63">
+                        <img class="card-image" src="images/mercedes-g63.jpg" alt="Black Mercedes-AMG G 63 in front of snowy mountains" width="1200" height="900">
+                        <div class="card-body">
+                            <h3>Mercedes-AMG G 63</h3>
+                            <p>The famous “Gelik”. Strong off-road, a lot of space and a powerful V8 engine.</p>
+                            <dl class="specs">
+                                <dt>Type</dt><dd>SUV</dd>
+                                <dt>Engine</dt><dd>Petrol V8, 585 hp</dd>
+                                <dt>Seats</dt><dd>5</dd>
+                            </dl>
+                            <p class="price">From $180,000</p>
+                            <a class="button button-outline" href="contact.html#test-drive">Plan a test drive</a>
+                        </div>
+                    </article>
+                    <article class="card car-card" id="mercedes-s-class">
+                        <img class="card-image" src="images/mercedes-s-class.jpg" alt="Black Mercedes-Benz S-Class on a stone street" width="1200" height="900">
+                        <div class="card-body">
+                            <h3>Mercedes-Benz S-Class</h3>
+                            <p>A big business sedan with a very quiet and comfortable cabin.</p>
+                            <dl class="specs">
+                                <dt>Type</dt><dd>Sedan</dd>
+                                <dt>Engine</dt><dd>Petrol, 435 hp</dd>
+                                <dt>Seats</dt><dd>5</dd>
+                            </dl>
+                            <p class="price">From $125,000</p>
+                            <a class="button button-outline" href="contact.html#test-drive">Plan a test drive</a>
+                        </div>
+                    </article>
+                    <article class="card car-card" id="porsche-taycan">
+                        <img class="card-image" src="images/porsche-taycan.jpg" alt="Silver Porsche Taycan parked near a brick building" width="1200" height="900">
+                        <div class="card-body">
+                            <h3>Porsche Taycan 4S</h3>
+                            <p>A fully electric Porsche. Charges from 5 to 80% in about 23 minutes.</p>
+                            <dl class="specs">
+                                <dt>Type</dt><dd>Electric</dd>
+                                <dt>Engine</dt><dd>Electric, 530 hp</dd>
+                                <dt>Seats</dt><dd>4</dd>
+                            </dl>
+                            <p class="price">From $110,000</p>
+                            <a class="button button-outline" href="contact.html#test-drive">Plan a test drive</a>
+                        </div>
+                    </article>
+                    <article class="card car-card" id="audi-a7">
+                        <img class="card-image" src="images/audi-a7.jpg" alt="Dark grey Audi A7 Sportback at night with headlights on" width="1200" height="900">
+                        <div class="card-body">
+                            <h3>Audi A7 Sportback</h3>
+                            <p>A four-door coupe with a big boot. LED headlights look great at night.</p>
+                            <dl class="specs">
+                                <dt>Type</dt><dd>Sportback</dd>
+                                <dt>Engine</dt><dd>Petrol, 340 hp</dd>
+                                <dt>Seats</dt><dd>5</dd>
+                            </dl>
+                            <p class="price">From $78,000</p>
+                            <a class="button button-outline" href="contact.html#test-drive">Plan a test drive</a>
+                        </div>
+                    </article>
+                    <article class="card car-card" id="porsche-718-spyder">
+                        <img class="card-image" src="images/porsche-718-spyder.jpg" alt="Yellow Porsche 718 Spyder on a mountain road" width="1200" height="900">
+                        <div class="card-body">
+                            <h3>Porsche 718 Spyder</h3>
+                            <p>A light open-top car with the engine in the middle. Made for driving on twisty roads.</p>
+                            <dl class="specs">
+                                <dt>Type</dt><dd>Convertible</dd>
+                                <dt>Engine</dt><dd>Petrol, 420 hp</dd>
+                                <dt>Seats</dt><dd>2</dd>
+                            </dl>
+                            <p class="price">From $105,000</p>
+                            <a class="button button-outline" href="contact.html#test-drive">Plan a test drive</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="compare" aria-labelledby="compare-title">
+            <div class="container">
+                <h2 id="compare-title">Compare models</h2>
+                <div class="table-wrap">
+                    <table>
+                        <caption>Main specifications and starting prices of all six models</caption>
+                        <thead>
+                            <tr><th scope="col">Model</th><th scope="col">Type</th><th scope="col">Engine</th><th scope="col">0&ndash;100 km/h</th><th scope="col">Seats</th><th scope="col">Price from</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><th scope="row">Porsche 911 Carrera S</th><td>Sports car</td><td>Petrol, 450 hp</td><td>3.7 s</td><td>4</td><td>$130,000</td></tr>
+                            <tr><th scope="row">Mercedes-AMG G 63</th><td>SUV</td><td>Petrol V8, 585 hp</td><td>4.5 s</td><td>5</td><td>$180,000</td></tr>
+                            <tr><th scope="row">Mercedes-Benz S-Class</th><td>Sedan</td><td>Petrol, 435 hp</td><td>4.9 s</td><td>5</td><td>$125,000</td></tr>
+                            <tr><th scope="row">Porsche Taycan 4S</th><td>Electric</td><td>Electric, 530 hp</td><td>4.0 s</td><td>4</td><td>$110,000</td></tr>
+                            <tr><th scope="row">Audi A7 Sportback</th><td>Sportback</td><td>Petrol, 340 hp</td><td>5.3 s</td><td>5</td><td>$78,000</td></tr>
+                            <tr><th scope="row">Porsche 718 Spyder</th><td>Convertible</td><td>Petrol, 420 hp</td><td>4.4 s</td><td>2</td><td>$105,000</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section aria-labelledby="services-title">
+            <div class="container">
+                <h2 id="services-title">After-sale services</h2>
+                <div class="service-list">
+                    <article class="card">
+                        <h3>Financing</h3>
+                        <p>We explain the car loan options of partner banks.</p>
+                        <ul>
+                            <li>Down payment from 20%</li>
+                            <li>Terms from 1 to 5 years</li>
+                        </ul>
+                    </article>
+                    <article class="card">
+                        <h3>Trade-in</h3>
+                        <p>Our expert checks your current car during your visit.</p>
+                        <ul>
+                            <li>Free technical check</li>
+                            <li>Value counted in the new price</li>
+                        </ul>
+                    </article>
+                    <article class="card">
+                        <h3>Maintenance</h3>
+                        <p>Regular service in our own workshop.</p>
+                        <ul>
+                            <li>Oil, brakes and tyres</li>
+                            <li>Detailing and cleaning</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-band" aria-labelledby="cta-title">
+            <div class="container">
+                <h2 id="cta-title">Want to try one of these cars?</h2>
+                <p>Choose a model and a date in the test drive planning form.</p>
+                <div class="button-row">
+                    <a class="button" href="contact.html#test-drive">Plan a test drive</a>
+                </div>
+            </div>
         </section>
     </main>
 
-    <footer><p>&copy; 2026 Aurelius Cars</p></footer>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <section aria-labelledby="footer-about">
+                    <h2 id="footer-about">Aurelius Cars</h2>
+                    <p>A car showroom in Astana with Porsche, Mercedes-Benz and Audi models, test drives and our own service centre.</p>
+                    <p><a href="contact.html#test-drive">Plan a test drive visit</a></p>
+                </section>
+                <section aria-labelledby="footer-pages">
+                    <h2 id="footer-pages">Pages</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Cars &amp; Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </section>
+                <section aria-labelledby="footer-contact">
+                    <h2 id="footer-contact">Contact</h2>
+                    <address>
+                        <p>12 Gold Avenue, Astana</p>
+                        <p><a href="tel:+77000000000">+7 700 000 0000</a></p>
+                        <p><a href="mailto:hello@aureliuscars.example">hello@aureliuscars.example</a></p>
+                    </address>
+                </section>
+            </div>
+            <p class="copyright">&copy; 2026 Aurelius Cars. Student project for Web Technologies, Astana IT University. The business and contact details are fictional.</p>
+        </div>
+    </footer>
 </body>
+</html>
