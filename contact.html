@@ -1,203 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Aurelius Cars</title>
+<aside class="card contact-details" aria-labelledby="details-title">
+                    <h2 id="details-title">Showroom details</h2>
+                    <address>
+                        <p>12 Gold Avenue, Astana</p>
+                        <p>Phone: <a href="tel:+77000000000">+7 700 000 0000</a></p>
+                        <p>Email: <a href="mailto:hello@aureliuscars.example">hello@aureliuscars.example</a></p>
+                    </address>
+                    <h3>Opening hours</h3>
+                    <dl class="hours">
+                        <dt>Mon&ndash;Fri</dt><dd>09:00&ndash;20:00</dd>
+                        <dt>Saturday</dt><dd>10:00&ndash;18:00</dd>
+                        <dt>Sunday</dt><dd>Closed</dd>
+                    </dl>
+                    <p><small>The address and phone number are fictional examples for this student project.</small></p>
+                </aside>
+            </div>
+        </section>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #111;
-            color: white;
-        }
+        <section id="faq" class="faq" aria-labelledby="faq-title">
+            <div class="container">
+                <h2 id="faq-title">Frequently asked questions</h2>
+                <details>
+                    <summary>How long is a test drive?</summary>
+                    <p>A standard test drive takes about 30 minutes on city roads with one of our consultants.</p>
+                </details>
+                <details>
+                    <summary>What documents do I need for a test drive?</summary>
+                    <p>Bring your ID and a valid driving licence. You must be at least 21 years old.</p>
+                </details>
+                <details>
+                    <summary>Can I compare prices before visiting?</summary>
+                    <p>Yes. All starting prices are in the <a href="services.html#compare">comparison table</a> on the Cars &amp; Services page.</p>
+                </details>
+                <details>
+                    <summary>Does the form on this page book a real test drive?</summary>
+                    <p>No. This website is a static student project. The form only shows how browser validation works and then opens a demonstration page. Nothing is sent or saved.</p>
+                </details>
+            </div>
+        </section>
+    </main>
 
-        header {
-            background: #000;
-            padding: 20px;
-            text-align: center;
-        }
-
-        header h1 {
-            color: #d4af37;
-        }
-
-        nav {
-            margin-top: 15px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 10px;
-        }
-
-        nav a:hover {
-            color: #d4af37;
-        }
-
-        .container {
-            width: 80%;
-            max-width: 1000px;
-            margin: 40px auto;
-        }
-
-        h2 {
-            text-align: center;
-            color: #d4af37;
-        }
-
-        .contact {
-            display: flex;
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .form,
-        .info {
-            background: #1d1d1d;
-            padding: 25px;
-            border-radius: 10px;
-            flex: 1;
-        }
-
-        h3 {
-            color: #d4af37;
-        }
-
-        label {
-            display: block;
-            margin-top: 15px;
-        }
-
-        input,
-        select,
-        textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            background: #292929;
-            color: white;
-            border: 1px solid #555;
-            border-radius: 5px;
-        }
-
-        textarea {
-            height: 100px;
-        }
-
-        button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            background: #d4af37;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        footer {
-            text-align: center;
-            background: #000;
-            padding: 20px;
-            margin-top: 40px;
-        }
-
-        @media (max-width: 700px) {
-            .contact {
-                display: block;
-            }
-
-            .form {
-                margin-bottom: 20px;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-<header>
-    <h1>Aurelius Cars</h1>
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="cars.html">Cars</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
-
-<div class="container">
-
-    <h2>Contact Us</h2>
-    <p style="text-align: center;">
-        Contact us to plan your visit or test drive.
-    </p>
-
-    <div class="contact">
-
-        <div class="form">
-            <h3>Test Drive</h3>
-
-            <form>
-                <label>Full Name</label>
-                <input type="text" placeholder="Your name">
-
-                <label>Email</label>
-                <input type="email" placeholder="Your email">
-
-                <label>Phone</label>
-                <input type="tel" placeholder="+7 700 000 0000">
-
-                <label>Car Model</label>
-                <select>
-                    <option>Select a car</option>
-                    <option>Aurelius A1</option>
-                    <option>Aurelius A2</option>
-                    <option>Aurelius X1</option>
-                    <option>Aurelius X2</option>
-                </select>
-
-                <label>Preferred Date</label>
-                <input type="date">
-
-                <label>Message</label>
-                <textarea placeholder="Write your message"></textarea>
-
-                <button type="button" onclick="alert('Demo form submitted!')">
-                    Check Demo Form
-                </button>
-            </form>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <section aria-labelledby="footer-about">
+                    <h2 id="footer-about">Aurelius Cars</h2>
+                    <p>A car showroom in Astana with Porsche, Mercedes-Benz and Audi models, test drives and our own service centre.</p>
+                    <p><a href="contact.html#test-drive">Plan a test drive visit</a></p>
+                </section>
+                <section aria-labelledby="footer-pages">
+                    <h2 id="footer-pages">Pages</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Cars &amp; Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </section>
+                <section aria-labelledby="footer-contact">
+                    <h2 id="footer-contact">Contact</h2>
+                    <address>
+                        <p>12 Gold Avenue, Astana</p>
+                        <p><a href="tel:+77000000000">+7 700 000 0000</a></p>
+                        <p><a href="mailto:hello@aureliuscars.example">hello@aureliuscars.example</a></p>
+                    </address>
+                </section>
+            </div>
+            <p class="copyright">&copy; 2026 Aurelius Cars. Student project for Web Technologies, Astana IT University. The business and contact details are fictional.</p>
         </div>
-
-        <div class="info">
-            <h3>Showroom Details</h3>
-
-            <p><b>Address:</b><br>
-            12 Gold Avenue, Astana</p>
-
-            <p><b>Phone:</b><br>
-            +7 700 000 0000</p>
-
-            <p><b>Email:</b><br>
-            hello@aureliuscars.example</p>
-
-            <p><b>Opening Hours:</b></p>
-
-            <p>
-                Monday - Friday: 09:00 - 20:00<br>
-                Saturday: 10:00 - 18:00<br>
-                Sunday: Closed
-            </p>
-        </div>
-
-    </div>
-</div>
-
-<footer>
-    <p>©️ 2026 Aurelius Cars</p>
-</footer>
-
+    </footer>
 </body>
 </html>
