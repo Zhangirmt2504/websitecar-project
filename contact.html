@@ -3,38 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Aurelius Cars</title>
+    <title>Contact - Aurelius Cars</title>
 
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
         body {
+            margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #111;
+            background: #111;
             color: white;
-            line-height: 1.6;
         }
 
         header {
-            background-color: #000;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            background: #000;
+            padding: 20px;
+            text-align: center;
         }
 
         header h1 {
             color: #d4af37;
         }
 
+        nav {
+            margin-top: 15px;
+        }
+
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 25px;
+            margin: 10px;
         }
 
         nav a:hover {
@@ -42,112 +38,78 @@
         }
 
         .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: 50px auto;
+            width: 80%;
+            max-width: 1000px;
+            margin: 40px auto;
         }
 
-        .title {
+        h2 {
             text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .title h2 {
-            font-size: 40px;
             color: #d4af37;
-            margin-bottom: 10px;
         }
 
-        .contact-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+        .contact {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
         }
 
-        .form-box,
-        .info-box {
-            background-color: #1c1c1c;
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid #333;
+        .form,
+        .info {
+            background: #1d1d1d;
+            padding: 25px;
+            border-radius: 10px;
+            flex: 1;
         }
 
-        .form-box h3,
-        .info-box h3 {
+        h3 {
             color: #d4af37;
-            margin-bottom: 20px;
-            font-size: 24px;
         }
 
         label {
             display: block;
             margin-top: 15px;
-            margin-bottom: 5px;
         }
 
         input,
         select,
         textarea {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #555;
-            border-radius: 6px;
-            background-color: #111;
+            padding: 10px;
+            margin-top: 5px;
+            background: #292929;
             color: white;
+            border: 1px solid #555;
+            border-radius: 5px;
         }
 
         textarea {
-            min-height: 120px;
-            resize: vertical;
+            height: 100px;
         }
 
         button {
             margin-top: 20px;
-            padding: 13px 25px;
-            background-color: #d4af37;
-            color: #000;
+            padding: 10px 20px;
+            background: #d4af37;
             border: none;
-            border-radius: 6px;
+            border-radius: 5px;
             cursor: pointer;
-            font-weight: bold;
-        }
-
-        button:hover {
-            background-color: #fff;
-        }
-
-        .info-box p {
-            margin-bottom: 15px;
-        }
-
-        .info-box strong {
-            color: #d4af37;
         }
 
         footer {
             text-align: center;
-            padding: 25px;
-            margin-top: 50px;
-            background-color: #000;
-            color: #aaa;
+            background: #000;
+            padding: 20px;
+            margin-top: 40px;
         }
 
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
+        @media (max-width: 700px) {
+            .contact {
+                display: block;
             }
 
-            nav a {
-                margin: 0 8px;
-            }
-
-            .contact-section {
-                grid-template-columns: 1fr;
-            }
-
-            .title h2 {
-                font-size: 30px;
+            .form {
+                margin-bottom: 20px;
             }
         }
     </style>
@@ -166,89 +128,76 @@
     </nav>
 </header>
 
-<main class="container">
+<div class="container">
 
-    <div class="title">
-        <h2>Contact Us</h2>
-        <p>Plan your visit or book a test drive with Aurelius Cars.</p>
-    </div>
+    <h2>Contact Us</h2>
+    <p style="text-align: center;">
+        Contact us to plan your visit or test drive.
+    </p>
 
-    <section class="contact-section">
+    <div class="contact">
 
-        <div class="form-box">
-            <h3>Test Drive Planning</h3>
+        <div class="form">
+            <h3>Test Drive</h3>
 
-            <form onsubmit="showMessage(event)">
+            <form>
+                <label>Full Name</label>
+                <input type="text" placeholder="Your name">
 
-                <label for="name">Full Name</label>
-                <input type="text" id="name" placeholder="Enter your name" required>
+                <label>Email</label>
+                <input type="email" placeholder="Your email">
 
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Enter your email" required>
+                <label>Phone</label>
+                <input type="tel" placeholder="+7 700 000 0000">
 
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" placeholder="+7 700 000 0000" required>
-
-                <label for="car">Car Model</label>
-                <select id="car" required>
-                    <option value="">Select a model</option>
+                <label>Car Model</label>
+                <select>
+                    <option>Select a car</option>
                     <option>Aurelius A1</option>
                     <option>Aurelius A2</option>
                     <option>Aurelius X1</option>
                     <option>Aurelius X2</option>
                 </select>
 
-                <label for="date">Preferred Date</label>
-                <input type="date" id="date" required>
+                <label>Preferred Date</label>
+                <input type="date">
 
-                <label for="message">Message</label>
-                <textarea id="message" placeholder="Tell us anything else..."></textarea>
+                <label>Message</label>
+                <textarea placeholder="Write your message"></textarea>
 
-                <button type="submit">Check Demo Form</button>
-
+                <button type="button" onclick="alert('Demo form submitted!')">
+                    Check Demo Form
+                </button>
             </form>
         </div>
 
-        <div class="info-box">
+        <div class="info">
             <h3>Showroom Details</h3>
 
-            <p>
-                <strong>Address:</strong><br>
-                12 Gold Avenue, Astana
-            </p>
+            <p><b>Address:</b><br>
+            12 Gold Avenue, Astana</p>
+
+            <p><b>Phone:</b><br>
+            +7 700 000 0000</p>
+
+            <p><b>Email:</b><br>
+            hello@aureliuscars.example</p>
+
+            <p><b>Opening Hours:</b></p>
 
             <p>
-                <strong>Phone:</strong><br>
-                +7 700 000 0000
-            </p>
-
-            <p>
-                <strong>Email:</strong><br>
-                hello@aureliuscars.example
-            </p>
-
-            <p>
-                <strong>Opening Hours:</strong><br>
-                Monday – Friday: 09:00 – 20:00<br>
-                Saturday: 10:00 – 18:00<br>
+                Monday - Friday: 09:00 - 20:00<br>
+                Saturday: 10:00 - 18:00<br>
                 Sunday: Closed
             </p>
         </div>
 
-    </section>
-
-</main>
+    </div>
+</div>
 
 <footer>
-    <p>©️ 2026 Aurelius Cars. Student project.</p>
+    <p>©️ 2026 Aurelius Cars</p>
 </footer>
-
-<script>
-    function showMessage(event) {
-        event.preventDefault();
-        alert("Thank you! Your test drive request has been received.");
-    }
-</script>
 
 </body>
 </html>
