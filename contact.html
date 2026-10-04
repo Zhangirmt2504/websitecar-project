@@ -1,3 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact details, test drive planning demo form and FAQ of Aurelius Cars.">
+    <title>Contact | Aurelius Cars</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="index.html">Aurelius <span>Cars</span></a>
+            <nav aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="services.html">Cars &amp; Services</a>
+                <a href="about.html">About</a>
+                <a href="contact.html" aria-current="page">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="page-hero" aria-labelledby="page-title">
+            <div class="container">
+                <p class="eyebrow">Contact and test drive</p>
+                <h1 id="page-title">Contact us</h1>
+                <p class="section-intro">Visit the showroom, call us or use the test drive planning form. Answers to common questions are in the <a href="#faq">FAQ section</a>.</p>
+            </div>
+        </section>
+
+        <section id="test-drive" aria-labelledby="form-title">
+            <div class="container contact-layout">
+                <div class="card contact-form">
+                    <h2 id="form-title">Test drive planning form</h2>
+                    <p class="demo-note" id="demo-note"><strong>Demo only.</strong> This is a static student website. Your information is not sent or stored. Please use sample details.</p>
+                    <form action="demo-result.html" method="get" aria-describedby="demo-note">
+                        <label for="full-name">Full name</label>
+                        <input id="full-name" type="text" autocomplete="name" required>
+
+                        <label for="email">Email</label>
+                        <input id="email" type="email" autocomplete="email" required>
+
+                        <label for="phone">Phone</label>
+                        <input id="phone" type="tel" autocomplete="tel" aria-describedby="phone-hint">
+                        <p class="field-hint" id="phone-hint">Optional. Example: +7 700 000 0000</p>
+
+                        <label for="car-model">Car model</label>
+                        <select id="car-model" required>
+                            <option value="">Choose a model</option>
+                            <option>Porsche 911 Carrera S</option>
+                            <option>Mercedes-AMG G 63</option>
+                            <option>Mercedes-Benz S-Class</option>
+                            <option>Porsche Taycan 4S</option>
+                            <option>Audi A7 Sportback</option>
+                            <option>Porsche 718 Spyder</option>
+                        </select>
+
+                        <label for="visit-date">Preferred date</label>
+                        <input id="visit-date" type="date" required>
+
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="4" required></textarea>
+
+                        <button type="submit">Check demo form</button>
+                    </form>
+                </div>
 <aside class="card contact-details" aria-labelledby="details-title">
                     <h2 id="details-title">Showroom details</h2>
                     <address>
