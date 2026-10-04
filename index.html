@@ -3,51 +3,168 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aurelius Cars | Home</title>
+    <meta name="description" content="Aurelius Cars: luxury car showroom with test drives, clear prices and service.">
+    <title>Home | Aurelius Cars</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-    <header>
-        <h1>Aurelius Cars</h1>
-        <p>Luxury Cars for Everyone</p>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="services.html">Cars</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="index.html">Aurelius <span>Cars</span></a>
+            <nav aria-label="Main navigation">
+                <a href="index.html" aria-current="page">Home</a>
+                <a href="services.html">Cars &amp; Services</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <h2>Find Your Dream Car</h2>
-            <p>We have beautiful and comfortable cars.</p>
-            <a class="button" href="services.html">See Our Cars</a>
+    <main id="main-content">
+        <section class="page-hero" aria-labelledby="page-title">
+            <div class="container hero-layout">
+                <div>
+                    <p class="eyebrow">Porsche, Mercedes and Audi in Astana</p>
+                    <h1 id="page-title">Find the car that fits your life</h1>
+                    <p>Aurelius Cars is a showroom for people who want a beautiful, safe and comfortable car. We compare models with you, explain the real costs and let you try the car before you decide.</p>
+                    <div class="button-row">
+                        <a class="button" href="services.html">See our cars</a>
+                        <a class="button button-outline" href="contact.html#test-drive">Plan a test drive</a>
+                    </div>
+                </div>
+                <img class="hero-image" src="images/mercedes-g63.jpg" alt="Black Mercedes-AMG G 63 in front of snowy mountains" width="1200" height="900">
+            </div>
         </section>
 
-        <section>
-            <h2>Our Popular Cars</h2>
-            <div class="car-list">
-                <article class="car-card">
-                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80" alt="Black sports car">
-                    <h3>Sports Car</h3>
-                    <p>Fast and beautiful.</p>
-                </article>
-                <article class="car-card">
-                    <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=900&q=80" alt="Luxury SUV">
-                    <h3>Luxury SUV</h3>
-                    <p>Big and comfortable.</p>
-                </article>
-                <article class="car-card">
-                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=900&q=80" alt="Luxury sedan">
-                    <h3>City Car</h3>
-                    <p>Good for every day.</p>
-                </article>
+        <section aria-labelledby="why-title">
+            <div class="container">
+                <h2 id="why-title">Why drivers choose Aurelius</h2>
+                <p class="section-intro">Six reasons our customers come back. Each one is explained in more detail on the other pages of this website.</p>
+                <ul class="features">
+                    <li class="card">
+                        <span class="feature-icon" aria-hidden="true">&#9670;</span>
+                        <h3>Checked cars</h3>
+                        <p>Every car passes a 120-point technical check before it appears in our catalogue.</p>
+                    </li>
+                    <li class="card">
+                        <span class="feature-icon" aria-hidden="true">&#9670;</span>
+                        <h3>Clear prices</h3>
+                        <p>The price on the page is the full price. Compare all models in our <a href="services.html#compare">comparison table</a>.</p>
+                    </li>
+                    <li class="card">
+                        <span class="feature-icon" aria-hidden="true">&#9670;</span>
+                        <h3>Test drives</h3>
+                        <p>Try any car in the city for 30 minutes with one of our consultants.</p>
+                    </li>
+                    <li class="card">
+                        <span class="feature-icon" aria-hidden="true">&#9670;</span>
+                        <h3>Trade-in</h3>
+                        <p>Bring your old car and we will include its value in the price of the new one.</p>
+                    </li>
+                    <li class="card">
+                        <span class="feature-icon" aria-hidden="true">&#9670;</span>
+                        <h3>Service centre</h3>
+                        <p>Maintenance, tyres and detailing are done in our own workshop.</p>
+                    </li>
+                    <li class="card">
+                        <span class="feature-icon" aria-hidden="true">&#9670;</span>
+                        <h3>Friendly team</h3>
+                        <p>Meet the people behind the showroom on our <a href="about.html#team">About page</a>.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section aria-labelledby="popular-title">
+            <div class="container">
+                <h2 id="popular-title">Popular this month</h2>
+                <p class="section-intro">Three models that customers ask about most often. The full catalogue has six cars with specifications.</p>
+                <div class="cards">
+                    <article class="card car-card">
+                        <img class="card-image" src="images/porsche-911.jpg" alt="Grey Porsche 911" width="1200" height="900">
+                        <div class="card-body">
+                            <h3>Porsche 911 Carrera S</h3>
+                            <p>Fast, beautiful and still practical for the city.</p>
+                            <p class="price">From $130,000</p>
+                            <a class="button button-outline" href="services.html#porsche-911">View details</a>
+                        </div>
+                    </article>
+                    <article class="card car-card">
+                        <img class="card-image" src="images/mercedes-g63.jpg" alt="Black Mercedes-AMG G 63" width="1200" height="900">
+                        <div class="card-body">
+                            <h3>Mercedes-AMG G 63</h3>
+                            <p>The legendary SUV that everybody calls “Gelik”.</p>
+                            <p class="price">From $180,000</p>
+                            <a class="button button-outline" href="services.html#mercedes-g63">View details</a>
+                        </div>
+                    </article>
+                    <article class="card car-card">
+                        <img class="card-image" src="images/porsche-taycan.jpg" alt="Silver Porsche Taycan" width="1200" height="900">
+                        <div class="card-body">
+                            <h3>Porsche Taycan 4S</h3>
+                            <p>Electric Porsche with fast charging and no petrol costs.</p>
+                            <p class="price">From $110,000</p>
+                            <a class="button button-outline" href="services.html#porsche-taycan">View details</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section aria-labelledby="steps-title">
+            <div class="container">
+                <h2 id="steps-title">How buying a car works</h2>
+                <ol class="steps">
+                    <li class="card"><h3>Choose</h3><p>Compare models and prices in the <a href="services.html">catalogue</a>.</p></li>
+                    <li class="card"><h3>Visit</h3><p>Come to the showroom and talk with a consultant.</p></li>
+                    <li class="card"><h3>Test drive</h3><p>Drive the car on real city roads before you decide.</p></li>
+                    <li class="card"><h3>Drive home</h3><p>Sign the documents and receive the keys the same week.</p></li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="cta-band" aria-labelledby="cta-title">
+            <div class="container">
+                <h2 id="cta-title">Still have questions?</h2>
+                <p>Read the answers to common questions or plan your visit.</p>
+                <div class="button-row">
+                    <a class="button" href="contact.html#faq">Read the FAQ</a>
+                    <a class="button button-outline" href="contact.html">Contact us</a>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer><p>&copy; 2026 Aurelius Cars</p></footer>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <section aria-labelledby="footer-about">
+                    <h2 id="footer-about">Aurelius Cars</h2>
+                    <p>A car showroom in Astana with Porsche, Mercedes-Benz and Audi models, test drives and our own service centre.</p>
+                    <p><a href="contact.html#test-drive">Plan a test drive visit</a></p>
+                </section>
+                <section aria-labelledby="footer-pages">
+                    <h2 id="footer-pages">Pages</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Cars &amp; Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </section>
+                <section aria-labelledby="footer-contact">
+                    <h2 id="footer-contact">Contact</h2>
+                    <address>
+                        <p>12 Gold Avenue, Astana</p>
+                        <p><a href="tel:+77000000000">+7 700 000 0000</a></p>
+                        <p><a href="mailto:hello@aureliuscars.example">hello@aureliuscars.example</a></p>
+                    </address>
+                </section>
+            </div>
+            <p class="copyright">&copy; 2026 Aurelius Cars. Student project for Web Technologies, Astana IT University. The business and contact details are fictional.</p>
+        </div>
+    </footer>
 </body>
 </html>
