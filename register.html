@@ -1,1 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Registration form for the Aurelius Club.">
+    <title>Register | Aurelius Cars</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="logo" href="index.html">Aurelius <span>Cars</span></a>
+            <nav aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="services.html">Cars &amp; Services</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="register.html" aria-current="page">Register</a>
+            </nav>
+        </div>
+    </header>
 
+    <main id="main-content">
+        <section class="page-hero" aria-labelledby="page-title">
+            <div class="container">
+                <p class="eyebrow">Aurelius Club</p>
+                <h1 id="page-title">Create your club account</h1>
+                <p class="section-intro">Club members get invitations to test drive days, news about new cars and a 10% discount on service in our workshop.</p>
+            </div>
+        </section>
+
+        <section aria-labelledby="register-title">
+            <div class="container contact-layout">
+                <div class="card contact-form">
+                    <h2 id="register-title">Registration</h2>
+                    <p class="demo-note" id="register-note"><strong>Demo only.</strong> No real account is created. Please use sample data.</p>
+                    <form id="register-form" class="row g-3" novalidate aria-describedby="register-note">
+                        <div class="col-md-6">
+                            <label for="first-name" class="form-label">First name</label>
+                            <input type="text" class="form-control" id="first-name" name="firstName" autocomplete="given-name" minlength="2" required>
+                            <div class="invalid-feedback">Please enter your first name (at least 2 characters).</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="last-name" class="form-label">Last name</label>
+                            <input type="text" class="form-control" id="last-name" name="lastName" autocomplete="family-name" minlength="2" required>
+                            <div class="invalid-feedback">Please enter your last name (at least 2 characters).</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="reg-email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="reg-email" name="email" autocomplete="email" placeholder="name@example.com" required>
+                            <div class="invalid-feedback">Please enter a valid email.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="country" class="form-label">Country</label>
+                            <select class="form-select" id="country" name="country" required>
+                                <option value="" selected>Choose your country</option>
+                                <option value="KZ">Kazakhstan</option>
+                                <option value="UZ">Uzbekistan</option>
+                                <option value="KG">Kyrgyzstan</option>
+                                <option value="RU">Russia</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <div class="invalid-feedback">Please choose a country.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" autocomplete="new-password" minlength="8" required aria-describedby="password-help">
+                            <div id="password-help" class="form-text">At least 8 characters.</div>
+                            <div class="invalid-feedback">The password must have at least 8 characters.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="confirm-password" class="form-label">Confirm password</label>
+                            <input type="password" class="form-control" id="confirm-password" name="confirmPassword" autocomplete="new-password" minlength="8" required>
+                            <div id="confirm-feedback" class="invalid-feedback">Please repeat your password (at least 8 characters).</div>
+                        </div>
+                        <div class="col-md-6">
+                            <fieldset>
+                                <legend class="form-label fs-6">Gender (optional)</legend>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gender" id="gender-male" value="male">
+                                    <label class="form-check-label" for="gender-male">Male</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gender" id="gender-female" value="female">
+                                    <label class="form-check-label" for="gender-female">Female</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gender" id="gender-none" value="not-say">
+                                    <label class="form-check-label" for="gender-none">Prefer not to say</label>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="col-md-6">
+                            <fieldset>
+                                <legend class="form-label fs-6">Interests (optional)</legend>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="interests" id="int-sport" value="sport">
+                                    <label class="form-check-label" for="int-sport">Sports cars</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="interests" id="int-suv" value="suv">
+                                    <label class="form-check-label" for="int-suv">SUVs</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="interests" id="int-electric" value="electric">
+                                    <label class="form-check-label" for="int-electric">Electric cars</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="interests" id="int-events" value="events">
+                                    <label class="form-check-label" for="int-events">Test drive events</label>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="col-12 d-flex flex-wrap gap-2">
+                            <button type="submit" class="button">Create account</button>
+                            <button type="reset" class="button button-outline">Reset</button>
+                        </div>
+                    </form>
+                    <div id="register-success" class="alert alert-success mt-3 d-none" role="status">All data is correct! This is a demo, so no account was created and nothing was sent.</div>
+                </div>
+
+                <aside class="card contact-details" aria-labelledby="benefits-title">
+                    <h2 id="benefits-title">Why join the club?</h2>
+                    <ul class="benefits">
+                        <li>Invitations to test drive days with new models</li>
+                        <li>10% discount on service and detailing</li>
+                        <li>News about new cars before they arrive</li>
+                        <li>Personal consultant for every member</li>
+                    </ul>
+                    <p>Have questions before you join? <a href="contact.html">Write to us</a>.</p>
+                </aside>
+            </div>
+        </section>
+
+        <section class="cta-band" aria-labelledby="cta-title">
+            <div class="container">
+                <h2 id="cta-title">Not ready to register?</h2>
+                <p>You can look at our cars first and come back later.</p>
+                <div class="button-row">
+                    <a class="button" href="services.html">See our cars</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <section aria-labelledby="footer-about">
+                    <h2 id="footer-about">Aurelius Cars</h2>
+                    <p>A car showroom in Astana with Porsche, Mercedes-Benz and Audi models, test drives and our own service centre.</p>
+                    <p><a href="register.html">Join Aurelius Club</a></p>
+                </section>
+                <section aria-labelledby="footer-pages">
+                    <h2 id="footer-pages">Pages</h2>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Cars &amp; Services</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="register.html">Register</a></li>
+                    </ul>
+                </section>
+                <section aria-labelledby="footer-contact">
+                    <h2 id="footer-contact">Contact</h2>
+                    <address>
+                        <p>12 Gold Avenue, Astana</p>
+                        <p><a href="tel:+77000000000">+7 700 000 0000</a></p>
+                        <p><a href="mailto:hello@aureliuscars.example">hello@aureliuscars.example</a></p>
+                    </address>
+                </section>
+            </div>
+            <p class="copyright">&copy; 2026 Aurelius Cars. Student project for Web Technologies, Astana IT University. The business and contact details are fictional.</p>
+        </div>
+    </footer>
+    <script src="js/register.js"></script>
+</body>
+</html>
