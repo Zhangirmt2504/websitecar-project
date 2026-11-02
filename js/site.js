@@ -7,7 +7,6 @@ $(function () {
 
     $html.addClass('js');
 
-
     function readSavedTheme() {
         try {
             return localStorage.getItem('theme');
