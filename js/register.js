@@ -1,4 +1,3 @@
-
 $(function () {
     const $form = $('#register-form');
     const $password = $('#password');
