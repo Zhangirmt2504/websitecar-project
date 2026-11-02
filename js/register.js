@@ -1,42 +1,41 @@
-const registerForm = document.getElementById('register-form');
-const password = document.getElementById('password');
-const confirmPassword = document.getElementById('confirm-password');
-const confirmFeedback = document.getElementById('confirm-feedback');
-const registerSuccess = document.getElementById('register-success');
-const defaultConfirmText = 'Please repeat your password (at least 8 characters).';
 
-function checkPasswords() {
-    if (confirmPassword.value !== '' && confirmPassword.value !== password.value) {
-        confirmPassword.setCustomValidity('Passwords do not match');
-        confirmFeedback.textContent = 'Passwords do not match.';
-    } else {
-        confirmPassword.setCustomValidity('');
-        confirmFeedback.textContent = defaultConfirmText;
+$(function () {
+    const $form = $('#register-form');
+    const $password = $('#password');
+    const $confirm = $('#confirm-password');
+    const $confirmFeedback = $('#confirm-feedback');
+    const $success = $('#register-success');
+    const defaultConfirmText = $confirmFeedback.text();
+
+    function checkPasswords() {
+        const confirmField = $confirm.get(0);
+
+        if ($confirm.val() !== '' && $confirm.val() !== $password.val()) {
+            confirmField.setCustomValidity('Passwords do not match');
+            $confirmFeedback.text('Passwords do not match.');
+        } else {
+            confirmField.setCustomValidity('');
+            $confirmFeedback.text(defaultConfirmText);
+        }
     }
-}
 
-password.addEventListener('input', checkPasswords);
-confirmPassword.addEventListener('input', checkPasswords);
+    $password.add($confirm).on('input', checkPasswords);
 
-registerForm.addEventListener('input', function () {
-    registerSuccess.classList.add('d-none');
-});
+    $form.on('input', function () {
+        $success.addClass('d-none');
+    });
 
-registerForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-    checkPasswords();
-    registerForm.classList.add('was-validated');
+    $form.on('submit', function (event) {
+        event.preventDefault();
+        checkPasswords();
+        $form.addClass('was-validated');
+        $success.toggleClass('d-none', !this.checkValidity());
+    });
 
-    if (registerForm.checkValidity()) {
-        registerSuccess.classList.remove('d-none');
-    } else {
-        registerSuccess.classList.add('d-none');
-    }
-});
-
-registerForm.addEventListener('reset', function () {
-    registerForm.classList.remove('was-validated');
-    confirmPassword.setCustomValidity('');
-    confirmFeedback.textContent = defaultConfirmText;
-    registerSuccess.classList.add('d-none');
+    $form.on('reset', function () {
+        $form.removeClass('was-validated');
+        $confirm.get(0).setCustomValidity('');
+        $confirmFeedback.text(defaultConfirmText);
+        $success.addClass('d-none');
+    });
 });
