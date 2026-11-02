@@ -1,4 +1,3 @@
-
 $(function () {
     const $form = $('#test-drive-form');
     const $success = $('#form-success');
