@@ -5,24 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Registration form for the Aurelius Club.">
     <title>Register | Aurelius Cars</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <script src="js/theme.js" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
         <div class="container header-inner">
             <a class="logo" href="index.html">Aurelius <span>Cars</span></a>
-            <nav aria-label="Main navigation">
+            <button type="button" id="theme-toggle" class="theme-toggle">Switch to light</button>
+            <button type="button" id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+            <nav id="main-nav" class="main-nav" aria-label="Main navigation">
                 <a href="index.html">Home</a>
                 <a href="services.html">Cars &amp; Services</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
                 <a href="register.html" aria-current="page">Register</a>
             </nav>
-            <button type="button" id="theme-toggle" class="theme-toggle">Switch to light theme</button>
         </div>
     </header>
 
@@ -39,7 +39,7 @@
             <div class="container contact-layout">
                 <div class="card contact-form">
                     <h2 id="register-title">Registration</h2>
-                    <p class="demo-note" id="register-note"><strong>Demo only.</strong> No real account is created. Please use sample data.</p>
+                    <p class="demo-note" id="register-note"><strong>Demo form.</strong> No real account is created. Please use sample data.</p>
                     <form id="register-form" class="row g-3" novalidate aria-describedby="register-note">
                         <div class="col-md-6">
                             <label for="first-name" class="form-label">First name</label>
@@ -81,7 +81,7 @@
                         </div>
                         <div class="col-md-6">
                             <fieldset>
-                                <legend class="form-label fs-6">Gender (optional)</legend>
+                                <legend class="form-label fs-6">Gender <span class="optional">(optional)</span></legend>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" name="gender" id="gender-male" value="male">
                                     <label class="form-check-label" for="gender-male">Male</label>
@@ -98,7 +98,7 @@
                         </div>
                         <div class="col-md-6">
                             <fieldset>
-                                <legend class="form-label fs-6">Interests (optional)</legend>
+                                <legend class="form-label fs-6">Interests <span class="optional">(optional)</span></legend>
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="interests" id="int-sport" value="sport">
                                     <label class="form-check-label" for="int-sport">Sports cars</label>
@@ -122,9 +122,8 @@
                             <button type="reset" class="button button-outline">Reset</button>
                         </div>
                     </form>
-                    <div id="register-success" class="alert alert-success mt-3 d-none" role="status">All data is correct! This is a demo, so no account was created and nothing was sent.</div>
+                    <div id="register-success" class="alert alert-success mt-3 d-none" role="status">Everything looks right. This is a demo, so no account was created.</div>
                 </div>
-
                 <aside class="card contact-details" aria-labelledby="benefits-title">
                     <h2 id="benefits-title">Why join the club?</h2>
                     <ul class="benefits">
@@ -133,7 +132,7 @@
                         <li>News about new cars before they arrive</li>
                         <li>Personal consultant for every member</li>
                     </ul>
-                    <p>Have questions before you join? <a href="contact.html">Write to us</a>.</p>
+                    <p>Have questions before you join? <a href="contact.html#faq">Read the FAQ</a>.</p>
                 </aside>
             </div>
         </section>
@@ -176,9 +175,11 @@
                     </address>
                 </section>
             </div>
-            <p class="copyright">&copy; 2026 Aurelius Cars. Student project for Web Technologies, Astana IT University. The business and contact details are fictional.</p>
+            <p class="copyright">&copy; 2026 Aurelius Cars. Student project for Web Technologies, Astana IT University. The showroom, address and phone number are fictional.</p>
         </div>
     </footer>
+    <script src="js/vendor/jquery-3.7.1.min.js"></script>
+    <script src="js/site.js"></script>
     <script src="js/register.js"></script>
 </body>
 </html>
