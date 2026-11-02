@@ -3,12 +3,6 @@
         padding-block: 3rem;
     }
 
-    .header-inner {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-
     .hero-layout {
         flex-direction: row;
         align-items: center;
@@ -35,7 +29,35 @@
     }
 }
 
+
 @media (min-width: 64rem) {
+    .header-inner {
+        flex-wrap: nowrap;
+        gap: 1.5rem;
+    }
+
+    .logo {
+        margin-right: auto;
+    }
+
+    .menu-toggle,
+    .js .menu-toggle {
+        display: none;
+    }
+
+   
+    .js .main-nav {
+        display: flex !important;
+        flex-direction: row;
+        flex-basis: auto;
+        align-items: center;
+        order: 1;
+    }
+
+    .theme-toggle {
+        order: 2;
+    }
+
     .features,
     .cards,
     .service-list,
