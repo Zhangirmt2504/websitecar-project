@@ -1,13 +1,32 @@
-const nameInput = document.getElementById('visitor-name');
-const welcomeButton = document.getElementById('welcome-button');
-const welcomeMessage = document.querySelector('#welcome-message');
+$(function () {
+    const $form = $('#welcome-form');
+    const $nameInput = $('#visitor-name');
+    const $message = $('#welcome-message');
+    const defaultText = $message.text();
 
-welcomeButton.addEventListener('click', function () {
-    const visitorName = nameInput.value.trim();
+    $form.on('submit', function (event) {
+        event.preventDefault();
 
-    if (visitorName === '') {
-        welcomeMessage.textContent = 'Please type your name first, then press the button.';
-    } else {
-        welcomeMessage.textContent = 'Welcome to Aurelius Cars, ' + visitorName + '! Have a look at our catalogue.';
-    }
+        const visitorName = $nameInput.val().trim();
+
+        if (visitorName === '') {
+            $message
+                .text('Please type your name first, then press the button.')
+                .removeClass('is-greeted')
+                .addClass('is-error');
+            $nameInput.trigger('focus');
+            return;
+        }
+
+        $message
+            .text('Welcome to Aurelius Cars, ' + visitorName + '! Start with the catalogue or book a test drive.')
+            .removeClass('is-error')
+            .addClass('is-greeted');
+    });
+
+    $nameInput.on('input', function () {
+        if ($message.hasClass('is-error') && $nameInput.val().trim() !== '') {
+            $message.text(defaultText).removeClass('is-error');
+        }
+    });
 });
