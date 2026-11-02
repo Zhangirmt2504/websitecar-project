@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact form, showroom details and FAQ of Aurelius Cars.">
+    <meta name="description" content="Book a test drive, find the showroom and read answers to common questions.">
     <title>Contact | Aurelius Cars</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <script src="js/theme.js" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
         <div class="container header-inner">
             <a class="logo" href="index.html">Aurelius <span>Cars</span></a>
-            <nav aria-label="Main navigation">
+            <button type="button" id="theme-toggle" class="theme-toggle">Switch to light</button>
+            <button type="button" id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+            <nav id="main-nav" class="main-nav" aria-label="Main navigation">
                 <a href="index.html">Home</a>
                 <a href="services.html">Cars &amp; Services</a>
                 <a href="about.html">About</a>
                 <a href="contact.html" aria-current="page">Contact</a>
                 <a href="register.html">Register</a>
             </nav>
-            <button type="button" id="theme-toggle" class="theme-toggle">Switch to light theme</button>
         </div>
     </header>
 
@@ -30,45 +30,66 @@
         <section class="page-hero" aria-labelledby="page-title">
             <div class="container">
                 <p class="eyebrow">Contact and test drive</p>
-                <h1 id="page-title">Contact us</h1>
-                <p class="section-intro">Write to us about any car or a test drive, call us or visit the showroom. Answers to common questions are in the <a href="#faq">FAQ section</a>.</p>
+                <h1 id="page-title">Book a test drive</h1>
+                <p class="section-intro">Choose a car and a day, and a consultant will prepare it for you. Answers to common questions are in the <a href="#faq">FAQ</a> below.</p>
             </div>
         </section>
 
         <section id="test-drive" aria-labelledby="form-title">
             <div class="container contact-layout">
                 <div class="card contact-form">
-                    <h2 id="form-title">Send us a message</h2>
-                    <p class="demo-note" id="demo-note"><strong>Demo only.</strong> This is a student website. The form checks your data, but nothing is sent or stored.</p>
-                    <form id="contact-form" class="row g-3" novalidate aria-describedby="demo-note">
+                    <h2 id="form-title">Test drive request</h2>
+                    <p class="demo-note" id="demo-note"><strong>Demo form.</strong> This is a student website without a server. The form checks your data, but the request is not sent anywhere.</p>
+                    <form id="test-drive-form" class="row g-3" novalidate aria-describedby="demo-note">
                         <div class="col-md-6">
-                            <label for="contact-name" class="form-label">Full name</label>
-                            <input type="text" class="form-control" id="contact-name" name="name" autocomplete="name" minlength="2" required aria-describedby="contact-name-help">
-                            <div id="contact-name-help" class="form-text">At least 2 characters.</div>
-                            <div class="valid-feedback">Looks good!</div>
-                            <div class="invalid-feedback">Please enter your name (at least 2 characters).</div>
+                            <label for="td-name" class="form-label">Full name</label>
+                            <input type="text" class="form-control" id="td-name" name="name" autocomplete="name" maxlength="60" data-validate aria-describedby="td-name-error">
+                            <div class="invalid-feedback" id="td-name-error"></div>
                         </div>
                         <div class="col-md-6">
-                            <label for="contact-email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="contact-email" name="email" autocomplete="email" placeholder="name@example.com" required aria-describedby="contact-email-help">
-                            <div id="contact-email-help" class="form-text">We will answer to this address.</div>
-                            <div class="valid-feedback">Looks good!</div>
-                            <div class="invalid-feedback">Please enter a valid email, for example name@example.com.</div>
+                            <label for="td-email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="td-email" name="email" autocomplete="email" placeholder="name@example.com" maxlength="80" data-validate aria-describedby="td-email-error">
+                            <div class="invalid-feedback" id="td-email-error"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="td-phone" class="form-label">Phone <span class="optional">(optional)</span></label>
+                            <input type="tel" class="form-control" id="td-phone" name="phone" autocomplete="tel" placeholder="+7 701 234 5678" maxlength="20" data-validate aria-describedby="td-phone-error">
+                            <div class="invalid-feedback" id="td-phone-error"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="td-car" class="form-label">Car</label>
+                            <select class="form-select" id="td-car" name="car" data-validate aria-describedby="td-car-error">
+                                <option value="">Choose a car</option>
+                                <option value="porsche-911">Porsche 911 Carrera S</option>
+                                <option value="mercedes-g63">Mercedes-AMG G 63</option>
+                                <option value="mercedes-s-class">Mercedes-Benz S-Class</option>
+                                <option value="porsche-taycan">Porsche Taycan 4S</option>
+                                <option value="audi-a7">Audi A7 Sportback</option>
+                                <option value="porsche-718-spyder">Porsche 718 Spyder</option>
+                            </select>
+                            <div class="invalid-feedback" id="td-car-error"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="td-date" class="form-label">Preferred day</label>
+                            <input type="date" class="form-control" id="td-date" name="date" data-validate aria-describedby="td-date-help td-date-error">
+                            <div class="form-text" id="td-date-help">Monday to Saturday, from tomorrow on.</div>
+                            <div class="invalid-feedback" id="td-date-error"></div>
                         </div>
                         <div class="col-12">
-                            <label for="contact-message" class="form-label">Message</label>
-                            <textarea class="form-control" id="contact-message" name="message" rows="5" minlength="10" maxlength="500" required aria-describedby="contact-message-help"></textarea>
-                            <div id="contact-message-help" class="form-text">From 10 to 500 characters. Typed: <span id="message-count">0</span>/500. Want a test drive? Write which car and which day.</div>
-                            <div class="valid-feedback">Looks good!</div>
-                            <div class="invalid-feedback">The message must be from 10 to 500 characters.</div>
+                            <label for="td-message" class="form-label">Comment <span class="optional">(optional)</span></label>
+                            <textarea class="form-control" id="td-message" name="message" rows="4" maxlength="500" aria-describedby="td-message-help"></textarea>
+                            <div class="form-text" id="td-message-help"><span id="message-count">0</span>/500 characters. For example: &ldquo;I would like to compare it with the Taycan&rdquo;.</div>
                         </div>
                         <div class="col-12">
-                            <button type="submit" class="button">Send message</button>
+                            <button type="submit" class="button">Check and send request</button>
                         </div>
                     </form>
-                    <div id="contact-success" class="alert alert-success mt-3 d-none" role="status">Thank you! Your message passed validation. This is a demo, so nothing was sent.</div>
+                    <div class="form-success" id="form-success" role="status" tabindex="-1" hidden>
+                        <p class="form-success-title">Your request passed all checks</p>
+                        <p id="form-success-text"></p>
+                        <p class="form-success-note">Demo only: nothing was sent, so nobody will call you. On a real website this is the moment the request would go to the showroom.</p>
+                    </div>
                 </div>
-
                 <aside class="card contact-details" aria-labelledby="details-title">
                     <h2 id="details-title">Showroom details</h2>
                     <address>
@@ -82,45 +103,55 @@
                         <dt>Saturday</dt><dd>10:00&ndash;18:00</dd>
                         <dt>Sunday</dt><dd>Closed</dd>
                     </dl>
-                    <p><small>The address and phone number are fictional examples for this student project.</small></p>
+                    <p><a href="services.html#shortlist-section">Check your shortlist</a> before the visit.</p>
                 </aside>
             </div>
         </section>
 
         <section id="faq" class="faq" aria-labelledby="faq-title">
             <div class="container">
-                <h2 id="faq-title">Frequently asked questions <span class="task-badge">Aurelius Cars</span></h2>
-                <p class="section-intro">Click a question to open or close its answer. Every question works on its own, and you can also open it from the keyboard with Enter or Space.</p>
-                <div class="faq-item">
-                    <h3 class="faq-question">
-                        <button type="button" class="faq-toggle" aria-expanded="false" aria-controls="faq-answer-1">How long is a test drive?</button>
-                    </h3>
-                    <div class="faq-answer" id="faq-answer-1" hidden>
-                        <p>A standard test drive takes about 30 minutes on city roads with one of our consultants.</p>
+                <h2 id="faq-title">Frequently asked questions</h2>
+                <p class="section-intro">What people usually ask us before their first test drive.</p>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h3 class="faq-question">
+                            <button type="button" class="faq-toggle" aria-expanded="false" aria-controls="faq-answer-1">How long is a test drive?</button>
+                        </h3>
+                        <div class="faq-answer" id="faq-answer-1" hidden>
+                            <p>A standard test drive takes about 30 minutes on city roads with one of our consultants. For the G 63 we also add a short off-road part outside the city.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">
-                        <button type="button" class="faq-toggle" aria-expanded="false" aria-controls="faq-answer-2">What documents do I need for a test drive?</button>
-                    </h3>
-                    <div class="faq-answer" id="faq-answer-2" hidden>
-                        <p>Bring your ID and a valid driving licence. You must be at least 21 years old.</p>
+                    <div class="faq-item">
+                        <h3 class="faq-question">
+                            <button type="button" class="faq-toggle" aria-expanded="false" aria-controls="faq-answer-2">What documents do I need?</button>
+                        </h3>
+                        <div class="faq-answer" id="faq-answer-2" hidden>
+                            <p>Bring your ID and a valid driving licence. You must be at least 21 years old and have at least two years of driving experience.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">
-                        <button type="button" class="faq-toggle" aria-expanded="false" aria-controls="faq-answer-3">Can I compare prices before visiting?</button>
-                    </h3>
-                    <div class="faq-answer" id="faq-answer-3" hidden>
-                        <p>Yes. All starting prices are in the <a href="services.html#compare">comparison table</a> on the Cars &amp; Services page.</p>
+                    <div class="faq-item">
+                        <h3 class="faq-question">
+                            <button type="button" class="faq-toggle" aria-expanded="false" aria-controls="faq-answer-3">Can I compare prices before visiting?</button>
+                        </h3>
+                        <div class="faq-answer" id="faq-answer-3" hidden>
+                            <p>Yes. All starting prices are in the <a href="services.html#compare">comparison table</a> on the Cars &amp; Services page.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="faq-item">
-                    <h3 class="faq-question">
-                        <button type="button" class="faq-toggle" aria-expanded="false" aria-controls="faq-answer-4">Does the form on this page really send my message?</button>
-                    </h3>
-                    <div class="faq-answer" id="faq-answer-4" hidden>
-                      <p>No. This website is a student project without a server. The form only checks your data in the browser and shows a demo message. Nothing is sent or saved.</p>
+                    <div class="faq-item">
+                        <h3 class="faq-question">
+                            <button type="button" class="faq-toggle" aria-expanded="false" aria-controls="faq-answer-4">Can I trade in my current car?</button>
+                        </h3>
+                        <div class="faq-answer" id="faq-answer-4" hidden>
+                            <p>Yes. Bring the car to the showroom, our expert checks it for free and the value is counted in the price of the new one.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <h3 class="faq-question">
+                            <button type="button" class="faq-toggle" aria-expanded="false" aria-controls="faq-answer-5">Is my test drive booked after I send the form?</button>
+                        </h3>
+                        <div class="faq-answer" id="faq-answer-5" hidden>
+                            <p>Not on this website. It is a student project without a server, so the form only checks your data in the browser. To really book a test drive you would call the showroom.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -154,10 +185,12 @@
                     </address>
                 </section>
             </div>
-            <p class="copyright">&copy; 2026 Aurelius Cars. Student project for Web Technologies, Astana IT University. The business and contact details are fictional.</p>
+            <p class="copyright">&copy; 2026 Aurelius Cars. Student project for Web Technologies, Astana IT University. The showroom, address and phone number are fictional.</p>
         </div>
     </footer>
+    <script src="js/vendor/jquery-3.7.1.min.js"></script>
+    <script src="js/site.js"></script>
     <script src="js/contact.js"></script>
     <script src="js/faq.js"></script>
 </body>
-</html> 
+</html>
