@@ -3,26 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Catalogue of six car models with specifications, price comparison and after-sale services.">
+    <meta name="description" content="Catalogue of six car models with search, brand filter, shortlist, price comparison and after-sale services.">
     <title>Cars &amp; Services | Aurelius Cars</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <script src="js/theme.js" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <header class="site-header">
         <div class="container header-inner">
             <a class="logo" href="index.html">Aurelius <span>Cars</span></a>
-            <nav aria-label="Main navigation">
+            <button type="button" id="theme-toggle" class="theme-toggle">Switch to light</button>
+            <button type="button" id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+            <nav id="main-nav" class="main-nav" aria-label="Main navigation">
                 <a href="index.html">Home</a>
                 <a href="services.html" aria-current="page">Cars &amp; Services</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
                 <a href="register.html">Register</a>
             </nav>
-            <button type="button" id="theme-toggle" class="theme-toggle">Switch to light theme</button>
         </div>
     </header>
 
@@ -32,7 +32,7 @@
                 <div>
                     <p class="eyebrow">Catalogue and services</p>
                     <h1 id="page-title">Our cars and services</h1>
-                    <p>Six cars from Porsche, Mercedes-Benz and Audi: sports cars, the G-Class SUV, a business sedan and an electric Porsche. Under the catalogue you can compare all prices in one table and read about our after-sale services.</p>
+                    <p>Six cars from Porsche, Mercedes-Benz and Audi: sports cars, the G-Class SUV, a business sedan and an electric Porsche. Search the catalogue, save the cars you like to a shortlist and compare all prices in one table.</p>
                     <div class="button-row">
                         <a class="button" href="#catalogue">Open the catalogue</a>
                         <a class="button button-outline" href="#compare">Compare prices</a>
@@ -44,17 +44,31 @@
 
         <section id="catalogue" aria-labelledby="catalogue-title">
             <div class="container">
-                <h2 id="catalogue-title">Car catalogue <span class="task-badge">Aurelius Cars</span></h2>
+                <h2 id="catalogue-title">Car catalogue</h2>
                 <p class="section-intro">All cars are available for a test drive. Prices are starting prices for the basic version.</p>
-                <div class="search-bar">
-                    <label for="car-search" class="form-label">Search by model name</label>
-                    <input type="search" class="form-control" id="car-search" name="car-search" placeholder="For example: Porsche">
-                    <p class="result-count" id="result-count">Showing 6 of 6 cars.</p>
+                <div class="catalogue-tools">
+                    <div class="search-bar">
+                        <label for="car-search" class="form-label">Search by model or type</label>
+                        <input type="search" class="form-control" id="car-search" name="car-search" placeholder="For example: 911 or SUV" autocomplete="off">
+                    </div>
+                    <div class="filter-block">
+                        <p class="form-label" id="brand-label">Brand</p>
+                        <div class="filter-group" id="brand-filter" role="group" aria-labelledby="brand-label">
+                            <button type="button" class="filter-button is-active" data-brand="all" aria-pressed="true">All</button>
+                            <button type="button" class="filter-button" data-brand="porsche" aria-pressed="false">Porsche</button>
+                            <button type="button" class="filter-button" data-brand="mercedes" aria-pressed="false">Mercedes-Benz</button>
+                            <button type="button" class="filter-button" data-brand="audi" aria-pressed="false">Audi</button>
+                        </div>
+                    </div>
                 </div>
-                <p class="no-results" id="no-results" hidden>No results found. Try another model name.</p>
-                <div class="cards">
-                    <article class="card car-card" id="porsche-911">
-                        <img class="card-image" src="images/porsche-911.jpg" alt="Grey Porsche 911 parked by a green hedge" width="1200" height="900">
+                <p class="result-count" id="result-count" aria-live="polite">Showing 6 of 6 cars</p>
+                <div class="no-results" id="no-results" hidden>
+                    <p>No results found. Try another name or choose a different brand.</p>
+                    <button type="button" class="button button-outline" id="reset-filters">Show all cars</button>
+                </div>
+                <div class="cards" id="car-list">
+                    <article class="card car-card" id="porsche-911" data-brand="porsche" data-type="Sports car">
+                        <img class="card-image" src="images/porsche-911.jpg" alt="Grey Porsche 911 parked by a green hedge" width="1200" height="900" loading="lazy">
                         <div class="card-body">
                             <h3>Porsche 911 Carrera S</h3>
                             <p>The classic rear-engine sports car. Very fast but still fine for everyday driving.</p>
@@ -64,25 +78,31 @@
                                 <dt>Seats</dt><dd>4</dd>
                             </dl>
                             <p class="price">From $130,000</p>
-                            <a class="button button-outline" href="contact.html#test-drive">Plan a test drive</a>
+                            <div class="card-actions">
+                                <button type="button" class="button add-to-shortlist" data-car="Porsche 911 Carrera S">Add to shortlist</button>
+                                <a class="button button-outline" href="contact.html?car=porsche-911#test-drive">Book a test drive</a>
+                            </div>
                         </div>
                     </article>
-                    <article class="card car-card" id="mercedes-g63">
-                        <img class="card-image" src="images/mercedes-g63.jpg" alt="Black Mercedes-AMG G 63 in front of snowy mountains" width="1200" height="900">
+                    <article class="card car-card" id="mercedes-g63" data-brand="mercedes" data-type="SUV">
+                        <img class="card-image" src="images/mercedes-g63.jpg" alt="Black Mercedes-AMG G 63 in front of snowy mountains" width="1200" height="900" loading="lazy">
                         <div class="card-body">
                             <h3>Mercedes-AMG G 63</h3>
-                            <p>The famous “Gelik”. Strong off-road, a lot of space and a powerful V8 engine.</p>
+                            <p>The famous &ldquo;Gelik&rdquo;. Strong off-road, a lot of space and a powerful V8 engine.</p>
                             <dl class="specs">
                                 <dt>Type</dt><dd>SUV</dd>
                                 <dt>Engine</dt><dd>Petrol V8, 585 hp</dd>
                                 <dt>Seats</dt><dd>5</dd>
                             </dl>
                             <p class="price">From $180,000</p>
-                            <a class="button button-outline" href="contact.html#test-drive">Plan a test drive</a>
+                            <div class="card-actions">
+                                <button type="button" class="button add-to-shortlist" data-car="Mercedes-AMG G 63">Add to shortlist</button>
+                                <a class="button button-outline" href="contact.html?car=mercedes-g63#test-drive">Book a test drive</a>
+                            </div>
                         </div>
                     </article>
-                    <article class="card car-card" id="mercedes-s-class">
-                        <img class="card-image" src="images/mercedes-s-class.jpg" alt="Black Mercedes-Benz S-Class on a stone street" width="1200" height="900">
+                    <article class="card car-card" id="mercedes-s-class" data-brand="mercedes" data-type="Sedan">
+                        <img class="card-image" src="images/mercedes-s-class.jpg" alt="Black Mercedes-Benz S-Class on a stone street" width="1200" height="900" loading="lazy">
                         <div class="card-body">
                             <h3>Mercedes-Benz S-Class</h3>
                             <p>A big business sedan with a very quiet and comfortable cabin.</p>
@@ -92,11 +112,14 @@
                                 <dt>Seats</dt><dd>5</dd>
                             </dl>
                             <p class="price">From $125,000</p>
-                            <a class="button button-outline" href="contact.html#test-drive">Plan a test drive</a>
+                            <div class="card-actions">
+                                <button type="button" class="button add-to-shortlist" data-car="Mercedes-Benz S-Class">Add to shortlist</button>
+                                <a class="button button-outline" href="contact.html?car=mercedes-s-class#test-drive">Book a test drive</a>
+                            </div>
                         </div>
                     </article>
-                    <article class="card car-card" id="porsche-taycan">
-                        <img class="card-image" src="images/porsche-taycan.jpg" alt="Silver Porsche Taycan parked near a brick building" width="1200" height="900">
+                    <article class="card car-card" id="porsche-taycan" data-brand="porsche" data-type="Electric">
+                        <img class="card-image" src="images/porsche-taycan.jpg" alt="Silver Porsche Taycan parked near a brick building" width="1200" height="900" loading="lazy">
                         <div class="card-body">
                             <h3>Porsche Taycan 4S</h3>
                             <p>A fully electric Porsche. Charges from 5 to 80% in about 23 minutes.</p>
@@ -106,57 +129,67 @@
                                 <dt>Seats</dt><dd>4</dd>
                             </dl>
                             <p class="price">From $110,000</p>
-                            <a class="button button-outline" href="contact.html#test-drive">Plan a test drive</a>
+                            <div class="card-actions">
+                                <button type="button" class="button add-to-shortlist" data-car="Porsche Taycan 4S">Add to shortlist</button>
+                                <a class="button button-outline" href="contact.html?car=porsche-taycan#test-drive">Book a test drive</a>
+                            </div>
                         </div>
                     </article>
-                    <article class="card car-card" id="audi-a7">
-                        <img class="card-image" src="images/audi-a7.jpg" alt="Dark grey Audi A7 Sportback at night with headlights on" width="1200" height="900">
+                    <article class="card car-card" id="audi-a7" data-brand="audi" data-type="Sportback">
+                        <img class="card-image" src="images/audi-a7.jpg" alt="Dark grey Audi A7 Sportback at night with headlights on" width="1200" height="900" loading="lazy">
                         <div class="card-body">
                             <h3>Audi A7 Sportback</h3>
-                            <p>A four-door coupe with a big boot. LED headlights look great at night.</p>
+                            <p>A four-door coupe with a big boot. The LED headlights look great at night.</p>
                             <dl class="specs">
                                 <dt>Type</dt><dd>Sportback</dd>
                                 <dt>Engine</dt><dd>Petrol, 340 hp</dd>
                                 <dt>Seats</dt><dd>5</dd>
                             </dl>
                             <p class="price">From $78,000</p>
-                            <a class="button button-outline" href="contact.html#test-drive">Plan a test drive</a>
+                            <div class="card-actions">
+                                <button type="button" class="button add-to-shortlist" data-car="Audi A7 Sportback">Add to shortlist</button>
+                                <a class="button button-outline" href="contact.html?car=audi-a7#test-drive">Book a test drive</a>
+                            </div>
                         </div>
                     </article>
-                    <article class="card car-card" id="porsche-718-spyder">
-                        <img class="card-image" src="images/porsche-718-spyder.jpg" alt="Yellow Porsche 718 Spyder on a mountain road" width="1200" height="900">
+                    <article class="card car-card" id="porsche-718-spyder" data-brand="porsche" data-type="Convertible">
+                        <img class="card-image" src="images/porsche-718-spyder.jpg" alt="Yellow Porsche 718 Spyder on a mountain road" width="1200" height="900" loading="lazy">
                         <div class="card-body">
                             <h3>Porsche 718 Spyder</h3>
-                            <p>A light open-top car with the engine in the middle. Made for driving on twisty roads.</p>
+                            <p>A light open-top car with the engine in the middle. Made for twisty roads.</p>
                             <dl class="specs">
                                 <dt>Type</dt><dd>Convertible</dd>
                                 <dt>Engine</dt><dd>Petrol, 420 hp</dd>
                                 <dt>Seats</dt><dd>2</dd>
                             </dl>
                             <p class="price">From $105,000</p>
-                            <a class="button button-outline" href="contact.html#test-drive">Plan a test drive</a>
+                            <div class="card-actions">
+                                <button type="button" class="button add-to-shortlist" data-car="Porsche 718 Spyder">Add to shortlist</button>
+                                <a class="button button-outline" href="contact.html?car=porsche-718-spyder#test-drive">Book a test drive</a>
+                            </div>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
 
-
         <section id="shortlist-section" aria-labelledby="shortlist-title">
             <div class="container">
-                <h2 id="shortlist-title">Your shortlist <span class="task-badge">Aurelius Cars</span></h2>
-                <p class="section-intro">Write down the cars you want to see in the showroom. The list is only kept while this page is open, so it disappears after a reload.</p>
-                <div class="feature-box">
-                    <form class="shortlist-form" id="shortlist-form">
+                <h2 id="shortlist-title">Your shortlist</h2>
+                <p class="section-intro">Press &ldquo;Add to shortlist&rdquo; on any car or write a note for the consultant, for example &ldquo;ask about winter tyres&rdquo;. The list stays in this browser after a reload.</p>
+                <div class="feature-box shortlist-box">
+                    <form class="inline-form" id="shortlist-form" novalidate>
                         <div class="form-field">
                             <label for="shortlist-input" class="form-label">Car or question</label>
-                            <input type="text" class="form-control" id="shortlist-input" name="shortlist-item">
+                            <input type="text" class="form-control" id="shortlist-input" name="shortlist-item" maxlength="60" autocomplete="off" aria-describedby="shortlist-error">
                         </div>
                         <button type="submit" class="button">Add</button>
                     </form>
-                    <p class="shortlist-error" id="shortlist-error" hidden>Please write something before adding it to the list.</p>
-                    <p class="result-count" id="shortlist-count">Your shortlist is empty.</p>
+                    <p class="field-message" id="shortlist-error" role="alert" hidden></p>
+                    <p class="result-count" id="shortlist-count">0 items</p>
+                    <p class="empty-state" id="shortlist-empty">Your shortlist is empty. Add a car from the catalogue above or write your own note.</p>
                     <ul class="shortlist" id="shortlist"></ul>
+                    <a class="button button-outline shortlist-next" href="contact.html#test-drive">Book a test drive</a>
                 </div>
             </div>
         </section>
@@ -218,13 +251,15 @@
         <section class="cta-band" aria-labelledby="cta-title">
             <div class="container">
                 <h2 id="cta-title">Want to try one of these cars?</h2>
-                <p>Choose a model and a date in the test drive planning form.</p>
+                <p>Choose a model and a day in the test drive form.</p>
                 <div class="button-row">
-                    <a class="button" href="contact.html#test-drive">Plan a test drive</a>
+                    <a class="button" href="contact.html#test-drive">Book a test drive</a>
                 </div>
             </div>
         </section>
     </main>
+
+    <p class="toast" id="shortlist-toast" role="status" aria-live="polite"></p>
 
     <footer class="site-footer">
         <div class="container">
@@ -253,10 +288,11 @@
                     </address>
                 </section>
             </div>
-            <p class="copyright">&copy; 2026 Aurelius Cars. Student project for Web Technologies, Astana IT University. The business and contact details are fictional.</p>
+            <p class="copyright">&copy; 2026 Aurelius Cars. Student project for Web Technologies, Astana IT University. The showroom, address and phone number are fictional.</p>
         </div>
     </footer>
+    <script src="js/vendor/jquery-3.7.1.min.js"></script>
+    <script src="js/site.js"></script>
     <script src="js/catalogue.js"></script>
 </body>
 </html>
-
